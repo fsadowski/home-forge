@@ -1,0 +1,269 @@
+# ==============================================================================
+# Secrets and credentials
+# ==============================================================================
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+!.env.*.example
+
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.agekey
+*.kubeconfig
+kubeconfig
+.netrc
+.npmrc
+.pypirc
+
+# Decrypted working copies of SOPS/age files (.sops.yaml itself stays tracked)
+*.dec
+*.dec.*
+*.decrypted
+*.decrypted.*
+
+# ==============================================================================
+# OpenTofu / Terraform
+# ==============================================================================
+# .terraform.lock.hcl is intentionally NOT ignored: commit it to pin providers.
+.terraform/
+.tofu/
+
+# State can contain secrets in plain text
+*.tfstate
+*.tfstate.*
+
+# Saved plans can contain secrets in plain text
+*.tfplan
+*.tfplan.json
+tfplan
+tfplan.*
+
+# Variable values; commit a *.tfvars.example instead
+*.tfvars
+*.tfvars.json
+
+# Local overrides
+override.tf
+override.tf.json
+override.tofu
+override.tofu.json
+*_override.tf
+*_override.tf.json
+*_override.tofu
+*_override.tofu.json
+
+# CLI configuration
+.terraformrc
+terraform.rc
+.tofurc
+tofu.rc
+
+# Tooling
+crash.log
+crash.*.log
+.terragrunt-cache/
+.infracost/
+.tflint.d/
+
+# ==============================================================================
+# Ansible
+# ==============================================================================
+# Vault-encrypted files are safe to commit; only the passwords are ignored here.
+.vault_pass
+.vault_pass.*
+.vault-pass
+.vault-pass.*
+.vault_password
+.vault_password.*
+vault_pass.txt
+vault-password.txt
+
+*.retry
+.ansible/
+.ansible_cache/
+fact_cache/
+# Roles and collections installed from requirements.yml
+galaxy_roles/
+galaxy_collections/
+.molecule/
+
+# ==============================================================================
+# Docker
+# ==============================================================================
+# Dockerfile, compose files and .dockerignore stay tracked.
+docker-compose.override.yml
+docker-compose.override.yaml
+compose.override.yml
+compose.override.yaml
+
+# Client configuration (may hold registry credentials)
+.docker/
+
+# Local bind-mount data
+.data/
+.volumes/
+
+# Image archives from `docker save`
+*.tar
+
+# ==============================================================================
+# CI/CD
+# ==============================================================================
+# Workflow definitions (.github/, .gitlab-ci.yml, .forgejo/, ...) stay tracked.
+
+# Local runners: act and gitlab-ci-local
+.secrets
+.vars
+.actrc
+.artifacts/
+.gitlab-ci-local/
+.gitlab-ci-local-env
+.gitlab-ci-local-variables.yml
+
+# Reports and scan results
+*.sarif
+reports/
+coverage/
+.coverage
+.coverage.*
+coverage.xml
+junit.xml
+junit-*.xml
+trivy-*.json
+sbom*.json
+
+# ==============================================================================
+# AI assistants
+# ==============================================================================
+# Shared instructions stay tracked: AGENTS.md, CLAUDE.md, GEMINI.md, .mcp.json,
+# .github/copilot-instructions.md, .clinerules, .cursorrules, ...
+# Do not put tokens in .mcp.json; reference environment variables instead.
+
+# Claude Code
+CLAUDE.local.md
+.claude/settings.local.json
+.claude/worktrees/
+
+# Cursor (keep shared rules)
+.cursor/*
+!.cursor/rules/
+
+# Windsurf / Codeium (keep shared rules)
+.windsurf/*
+!.windsurf/rules/
+.codeium/
+
+# Continue (keep shared rules)
+.continue/*
+!.continue/rules/
+
+# Cline / Roo Code (keep shared rules)
+.cline/*
+!.cline/rules/
+.roo/*
+!.roo/rules/
+
+# Other agents and CLIs
+.aider*
+.amazonq/
+.codex/
+.crush/
+.gemini/
+.goose/
+.junie/
+.opencode/
+.qwen/
+.serena/
+.tabby/
+.tabnine/
+
+# Local model runtimes and caches
+.ollama/
+.lmstudio/
+.huggingface/
+.localai/
+.gpt4all/
+.jan/
+.open-webui/
+
+# Model weights
+*.gguf
+*.ggml
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.llamafile
+
+# Vector stores and embeddings
+.chroma/
+.chromadb/
+chroma_db/
+qdrant_storage/
+*.faiss
+
+# ==============================================================================
+# Languages and tooling
+# ==============================================================================
+# Python (Ansible, scripts)
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.tox/
+
+# Node.js (commit hooks, tooling)
+node_modules/
+
+# direnv
+.direnv/
+.envrc.local
+
+# ==============================================================================
+# Editors and operating systems
+# ==============================================================================
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+*.code-workspace
+
+*.swp
+*.swo
+*~
+.netrwhist
+
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# ==============================================================================
+# Logs and temporary files
+# ==============================================================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+*.rej
+tmp/
+.cache/
