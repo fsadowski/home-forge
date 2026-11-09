@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "deny": [
+      "Edit(**/.env)",
+      "Write(**/.env)",
+      "Edit(**/acme.json)",
+      "Write(**/acme.json)",
+      "Edit(**/*.key)",
+      "Write(**/*.key)",
+      "Edit(**/*.pem)",
+      "Write(**/*.pem)",
+      "Edit(**/*.crt)",
+      "Write(**/*.crt)",
+      "Edit(**/*.p12)",
+      "Write(**/*.p12)",
+      "Edit(**/*.pfx)",
+      "Write(**/*.pfx)",
+      "Edit(./secrets/**)",
+      "Write(./secrets/**)",
+      "Read(./secrets/**)",
+      "Edit(./.github/**)",
+      "Write(./.github/**)",
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)",
+      "Bash(curl * | bash)",
+      "Bash(wget * | sh)"
+    ]
+  }
+}
