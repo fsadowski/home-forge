@@ -80,3 +80,5 @@ Read-only inspection, such as `tofu plan` and `ansible-playbook --check`, is the
 ## Documentation
 
 Write all code, comments, commit messages, and docs in English. When a change affects the repository's structure or how something is operated, update `README.md`, this file, or `docs/` in the same change.
+
+Domain terms are defined in `GLOSSARY-MAP.md` and the per-context glossaries it links. Use those terms in code, docs, and conversation, and update the glossary in the same change when a term is added or its meaning shifts.
