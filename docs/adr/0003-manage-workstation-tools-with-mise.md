@@ -64,6 +64,7 @@ This ADR does not list tool versions. They live only in `mise.toml` and `require
 - `mise.toml` sets environment variables, so each workstation has to run `mise trust` once before mise applies it.
 - mise has to be activated in the shell, or the commands run through `mise exec`. Without it, the system versions run instead.
 - Packages are not installed into the virtual environment automatically. After a change to `requirements.txt`, the install step has to be run again.
+- The lockfile covers only the tools mise installs. `requirements.txt` pins only `ansible-core` and `ansible-lint`, so their transitive dependencies can resolve to different versions on a fresh install, and pip does not check the packages against recorded checksums. Revisit this with a Python lockfile, such as `uv.lock` or `pip-compile --generate-hashes`, when an unpinned dependency breaks a run or when CI needs installs that are identical byte for byte.
 - Tools come from the backends the mise registry chooses. A registry change can move a tool to another backend on a mise upgrade.
 
 ## Out of scope
