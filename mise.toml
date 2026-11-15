@@ -1,0 +1,16 @@
+# Workstation tools for this repository, as decided in ADR-0003.
+# Versions are exact; add an area's tools when its directory is created.
+min_version = "2026.11.5"
+
+[tools]
+python = "3.15.2"
+
+[env]
+# ansible-core and ansible-lint are pinned in ansible/requirements.txt (ADR-0002).
+_.python.venv = { path = "ansible/.venv", create = true }
+
+[settings]
+lockfile = true
+lockfile_platforms = ["linux-x64"]
+# Build the venv with Python's own venv module, even if uv is installed.
+python.venv_stdlib = true

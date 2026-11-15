@@ -34,6 +34,7 @@ The repository is at an early stage, and some of these directories may not exist
 - **Declarative and idempotent:** a repeated run with no changes must report no changes.
 - **No manual drift:** changes to the homelab are made through this repository, not by hand on a host.
 - **Pinned versions:** pin OpenTofu providers, Ansible collections, container images, and Helm charts to explicit versions. Never use `latest`.
+- **Pinned tools:** the CLIs this repository runs are pinned in `mise.toml`, following [ADR-0003](docs/adr/0003-manage-workstation-tools-with-mise.md). When you create one of the directories above, add the tools it needs in the same change.
 - **Least privilege:** avoid running containers as root, and scope credentials and permissions to what is needed.
 - **Readable over clever:** use clear names, and comment only to explain why something is done.
 
@@ -50,7 +51,7 @@ Use placeholders and committed `*.example` files for values that must stay priva
 
 ## Validation
 
-Run the checks relevant to the files you changed and report the results. If a tool is not installed or a check could not be run, say so.
+Run the checks relevant to the files you changed and report the results. If a tool is not installed or a check could not be run, say so. Run them with the tools pinned in `mise.toml`: in a shell where mise is activated, or prefixed with `mise exec --`.
 
 | Area       | Checks                                                                 |
 | ---------- | ---------------------------------------------------------------------- |
