@@ -66,21 +66,21 @@ ansible/
 
 **Pinning**
 
-- `requirements.txt` pins `ansible-core` and `ansible-lint` with `==`, and they are installed into a Python virtual environment.
+- `requirements.txt` pins `ansible-core` and `ansible-lint` with `==`, and they are installed into the Python virtual environment in `ansible/.venv`, which mise creates as [ADR-0003](./0003-manage-workstation-tools-with-mise.md) decides.
 - `requirements.yml` pins the collections, which are installed into `ansible/collections/`.
 
 ## Alternatives considered
 
-| Option                                       | Why it was not chosen                                                                                                                                               |
-| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Dynamic inventory from Proxmox or OpenTofu   | The Physical Host is in neither, so a static part would still be needed. It adds a plugin to maintain for a few Hosts. Worth revisiting once VM Hosts change often. |
-| Separate staging and production inventories  | The homelab has one real environment. `--check` and a throwaway VM Host are cheaper than keeping a second inventory in sync.                                        |
-| Groups for Physical Hosts and VM Hosts       | The difference matters only for the Bootstrap, which happens before Ansible takes over. Groups with no variables or plays attached are noise.                       |
-| One play on `all` for Baseline and Hardening | Running a single Host Type playbook would then skip Hardening without any warning.                                                                                  |
-| Several Host Types per Host                  | It would let a Host share duties, such as the Docker Host joining the cluster, but it makes Baseline and Hardening run twice and blurs what a Host is for.          |
-| Committing the inventory unencrypted         | The addresses reveal little, but `AGENTS.md` does not allow it. Whether the inventory is committed encrypted is left to the decision on secrets.                    |
-| Community roles by default                   | A community hardening role hides the part of the work that is worth understanding and reviewing.                                                                    |
-| `uv` with a lockfile                         | It would also lock transitive Python dependencies, but it adds a tool. Exact pins in `requirements.txt` meet the pinning rule for now.                              |
+| Option                                       | Why it was not chosen                                                                                                                                                         |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dynamic inventory from Proxmox or OpenTofu   | The Physical Host is in neither, so a static part would still be needed. It adds a plugin to maintain for a few Hosts. Worth revisiting once VM Hosts change often.           |
+| Separate staging and production inventories  | The homelab has one real environment. `--check` and a throwaway VM Host are cheaper than keeping a second inventory in sync.                                                  |
+| Groups for Physical Hosts and VM Hosts       | The difference matters only for the Bootstrap, which happens before Ansible takes over. Groups with no variables or plays attached are noise.                                 |
+| One play on `all` for Baseline and Hardening | Running a single Host Type playbook would then skip Hardening without any warning.                                                                                            |
+| Several Host Types per Host                  | It would let a Host share duties, such as the Docker Host joining the cluster, but it makes Baseline and Hardening run twice and blurs what a Host is for.                    |
+| Committing the inventory unencrypted         | The addresses reveal little, but `AGENTS.md` does not allow it. Whether the inventory is committed encrypted is left to the decision on secrets.                              |
+| Community roles by default                   | A community hardening role hides the part of the work that is worth understanding and reviewing.                                                                              |
+| `uv` with a lockfile                         | It would also lock transitive Python dependencies, but it adds a tool. Exact pins in `requirements.txt` meet the pinning rule for now. ADR-0003 adopts mise but keeps uv out. |
 
 ## Consequences
 
