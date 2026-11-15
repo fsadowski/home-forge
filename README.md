@@ -20,3 +20,9 @@ Built with the help of AI and held to production-ready standards, following indu
 | `docker/`     | Containerized services and Compose definitions  |
 | `kubernetes/` | Kubernetes manifests and cluster configuration  |
 | `docs/`       | Architecture notes, decisions, and runbooks     |
+
+## Documentation
+
+- [Architecture Decision Records](docs/adr/README.md): significant decisions and the reasons behind them
+- [Glossary map](GLOSSARY-MAP.md): the domain terms used across the repository, grouped by context
+- [AGENTS.md](AGENTS.md): working agreements and engineering standards for contributors, human or AI

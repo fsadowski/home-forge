@@ -27,7 +27,7 @@ The repository is at an early stage, and some of these directories may not exist
 - Prefer small, reviewable changes that can be understood one at a time.
 - Ask before introducing a new tool, or anything else that adds a long-term maintenance burden.
 - Do not paper over something you are unsure about. Say what is unverified, and link to official documentation when a choice depends on it.
-- Record significant architecture decisions in `docs/`, and add a runbook for any operational procedure that has to be repeated.
+- Record significant architecture decisions as ADRs in `docs/adr/`, following the conventions and template in `docs/adr/README.md`. Add a runbook for any operational procedure that has to be repeated.
 
 ## Engineering standards
 
