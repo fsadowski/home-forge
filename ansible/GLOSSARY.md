@@ -11,11 +11,11 @@ A machine whose operating system is configured by Ansible from this repository.
 _Avoid_: server, box, machine
 
 **Docker Host**:
-The physical Host that runs the Base Services as containers.
+A Host that runs the Base Services as containers.
 _Avoid_: Docker server
 
 **Cluster Node**:
-A virtual machine Host that is a member of the k3s cluster.
+A Host that is a member of the k3s cluster.
 _Avoid_: node, k8s VM, Proxmox node
 
 ### Services
