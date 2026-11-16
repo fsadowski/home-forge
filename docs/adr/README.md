@@ -7,8 +7,8 @@ An Architecture Decision Record (ADR) records one significant decision: the cont
 | ADR                                                  | Title                              | Status   |
 | ---------------------------------------------------- | ---------------------------------- | -------- |
 | [0001](./0001-use-ansible-for-host-configuration.md) | Use Ansible for host configuration | Accepted |
-| [0002](./0002-organise-ansible-by-host-type.md)      | Organise Ansible by Host Type      | Proposed |
-| [0003](./0003-manage-workstation-tools-with-mise.md) | Manage workstation tools with mise | Proposed |
+| [0002](./0002-organise-ansible-by-host-type.md)      | Organise Ansible by Host Type      | Accepted |
+| [0003](./0003-manage-workstation-tools-with-mise.md) | Manage workstation tools with mise | Accepted |
 
 ## When to write an ADR
 

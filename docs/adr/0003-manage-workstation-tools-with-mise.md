@@ -1,6 +1,6 @@
 # ADR-0003: Manage workstation tools with mise
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-15
 
 ## Context

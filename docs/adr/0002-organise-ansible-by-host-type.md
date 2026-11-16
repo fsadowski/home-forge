@@ -1,6 +1,6 @@
 # ADR-0002: Organise Ansible by Host Type
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-15
 
 ## Context
