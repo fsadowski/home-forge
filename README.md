@@ -23,7 +23,7 @@ Built with the help of AI and held to production-ready standards, following indu
 
 ## Workstation setup
 
-The tools this repository runs are pinned in [`mise.toml`](mise.toml) and installed with [mise](https://mise.jdx.dev/), as decided in [ADR-0003](docs/adr/0003-manage-workstation-tools-with-mise.md).
+The tools this repository runs are pinned in [`mise.toml`](mise.toml) and installed with [mise](https://mise.jdx.dev/), as decided in [ADR-0002](docs/adr/0002-manage-workstation-tools-with-mise.md).
 
 1. Install mise at the pinned version. The install script verifies the download's checksum before installing:
 

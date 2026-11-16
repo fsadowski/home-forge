@@ -4,11 +4,21 @@ An Architecture Decision Record (ADR) records one significant decision: the cont
 
 ## Index
 
+This index lists the ADRs that apply across the repository. Each context lists its own ADRs:
+
+- [Host Configuration](../../ansible/docs/adr/README.md) (`ansible/`)
+
 | ADR                                                  | Title                              | Status   |
 | ---------------------------------------------------- | ---------------------------------- | -------- |
 | [0001](./0001-use-ansible-for-host-configuration.md) | Use Ansible for host configuration | Accepted |
-| [0002](./0002-organise-ansible-by-host-type.md)      | Organise Ansible by Host Type      | Accepted |
-| [0003](./0003-manage-workstation-tools-with-mise.md) | Manage workstation tools with mise | Accepted |
+| [0002](./0002-manage-workstation-tools-with-mise.md) | Manage workstation tools with mise | Accepted |
+
+ADRs that were renumbered or moved:
+
+| Former ID | Current ID                                                                         |
+| --------- | ---------------------------------------------------------------------------------- |
+| ADR-0002  | [ADR-ANSIBLE-0001](../../ansible/docs/adr/0001-organise-ansible-by-host-type.md)   |
+| ADR-0003  | [ADR-0002](./0002-manage-workstation-tools-with-mise.md)                           |
 
 ## When to write an ADR
 

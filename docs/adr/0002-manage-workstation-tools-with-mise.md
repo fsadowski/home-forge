@@ -1,11 +1,12 @@
-# ADR-0003: Manage workstation tools with mise
+# ADR-0002: Manage workstation tools with mise
 
 - **Status:** Accepted
+- **Formerly:** ADR-0003
 - **Date:** 2026-11-15
 
 ## Context
 
-`AGENTS.md` requires pinned versions, and [ADR-0002](./0002-organise-ansible-by-host-type.md) pins `ansible-core` and `ansible-lint` in `requirements.txt`. The tools that run those pins are not pinned yet. The Python interpreter behind the Ansible virtual environment is whatever the operating system ships, and it changes with an OS upgrade. Each new area of the repository adds CLIs of its own: OpenTofu for `opentofu/`, and `kubectl` and Helm for `kubernetes/`. Installed by hand, their versions drift between workstations and away from what the repository was tested with.
+`AGENTS.md` requires pinned versions, and [ADR-ANSIBLE-0001](../../ansible/docs/adr/0001-organise-ansible-by-host-type.md) pins `ansible-core` and `ansible-lint` in `requirements.txt`. The tools that run those pins are not pinned yet. The Python interpreter behind the Ansible virtual environment is whatever the operating system ships, and it changes with an OS upgrade. Each new area of the repository adds CLIs of its own: OpenTofu for `opentofu/`, and `kubectl` and Helm for `kubernetes/`. Installed by hand, their versions drift between workstations and away from what the repository was tested with.
 
 The homelab is run by one person from one Linux x86-64 workstation. A rebuilt workstation should get the same tools from the repository alone.
 
@@ -34,7 +35,7 @@ Use [mise](https://mise.jdx.dev/) to install and pin the CLIs the repository run
 
 - mise pins Python and creates the Ansible virtual environment in `ansible/.venv`.
 - The virtual environment is created with Python's own `venv` module, never with uv, even when uv is installed.
-- `ansible/requirements.txt` stays the only pin for `ansible-core` and `ansible-lint`, as ADR-0002 decides. Installing it into the virtual environment is a documented setup step.
+- `ansible/requirements.txt` stays the only pin for `ansible-core` and `ansible-lint`, as ADR-ANSIBLE-0001 decides. Installing it into the virtual environment is a documented setup step.
 
 This ADR does not list tool versions. They live only in `mise.toml` and `requirements.txt`, so that a version bump does not change this ADR.
 

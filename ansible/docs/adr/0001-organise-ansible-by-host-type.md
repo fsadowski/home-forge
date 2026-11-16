@@ -1,13 +1,14 @@
-# ADR-0002: Organise Ansible by Host Type
+# ADR-ANSIBLE-0001: Organise Ansible by Host Type
 
 - **Status:** Accepted
+- **Formerly:** ADR-0002
 - **Date:** 2026-11-15
 
 ## Context
 
-[ADR-0001](./0001-use-ansible-for-host-configuration.md) chose Ansible for host configuration and left the layout of `ansible/` and the inventory for a separate decision.
+[ADR-0001](../../../docs/adr/0001-use-ansible-for-host-configuration.md) chose Ansible for host configuration and left the layout of `ansible/` and the inventory for a separate decision.
 
-Every [Host](../../ansible/GLOSSARY.md) needs the Baseline and Hardening, and then the configuration for its Host Type. Today there are two Host Types: the Docker Host, which is a Physical Host, and the Cluster Nodes, which are VM Hosts. A Host that misses its Hardening is a security gap, so the layout should make that hard to do by accident.
+Every [Host](../../GLOSSARY.md) needs the Baseline and Hardening, and then the configuration for its Host Type. Today there are two Host Types: the Docker Host, which is a Physical Host, and the Cluster Nodes, which are VM Hosts. A Host that misses its Hardening is a security gap, so the layout should make that hard to do by accident.
 
 The inventory holds the addresses of the homelab, and `AGENTS.md` does not allow unencrypted inventory data to be committed. ADR-0001 also requires `ansible-core` and the collections to be pinned.
 
@@ -66,7 +67,7 @@ ansible/
 
 **Pinning**
 
-- `requirements.txt` pins `ansible-core` and `ansible-lint` with `==`, and they are installed into the Python virtual environment in `ansible/.venv`, which mise creates as [ADR-0003](./0003-manage-workstation-tools-with-mise.md) decides.
+- `requirements.txt` pins `ansible-core` and `ansible-lint` with `==`, and they are installed into the Python virtual environment in `ansible/.venv`, which mise creates as [ADR-0002](../../../docs/adr/0002-manage-workstation-tools-with-mise.md) decides.
 - `requirements.yml` pins the collections, which are installed into `ansible/collections/`.
 
 ## Alternatives considered
@@ -80,7 +81,7 @@ ansible/
 | Several Host Types per Host                  | It would let a Host share duties, such as the Docker Host joining the cluster, but it makes Baseline and Hardening run twice and blurs what a Host is for.                    |
 | Committing the inventory unencrypted         | The addresses reveal little, but `AGENTS.md` does not allow it. Whether the inventory is committed encrypted is left to the decision on secrets.                              |
 | Community roles by default                   | A community hardening role hides the part of the work that is worth understanding and reviewing.                                                                              |
-| `uv` with a lockfile                         | It would also lock transitive Python dependencies, but it adds a tool. Exact pins in `requirements.txt` meet the pinning rule for now. ADR-0003 adopts mise but keeps uv out. |
+| `uv` with a lockfile                         | It would also lock transitive Python dependencies, but it adds a tool. Exact pins in `requirements.txt` meet the pinning rule for now. ADR-0002 adopts mise but keeps uv out. |
 
 ## Consequences
 
@@ -108,7 +109,7 @@ ansible/
 
 ## References
 
-- [Host Configuration glossary](../../ansible/GLOSSARY.md)
+- [Host Configuration glossary](../../GLOSSARY.md)
 - [Sample Ansible setup](https://docs.ansible.com/projects/ansible/latest/tips_tricks/sample_setup.html)
 - [Roles](https://docs.ansible.com/projects/ansible/latest/playbook_guide/playbooks_reuse_roles.html)
 - [How to build your inventory](https://docs.ansible.com/projects/ansible/latest/inventory_guide/intro_inventory.html)
