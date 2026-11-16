@@ -11,15 +11,17 @@ Everything is held to production-ready standards, even though it runs at home.
 
 ## Repository layout
 
-| Directory     | Purpose                                        |
-| ------------- | ---------------------------------------------- |
-| `opentofu/`   | Infrastructure provisioning with OpenTofu      |
-| `ansible/`    | Host configuration and automation              |
-| `docker/`     | Containerized services and Compose definitions |
-| `kubernetes/` | Kubernetes manifests and cluster configuration |
-| `docs/`       | Architecture notes, decisions, and runbooks    |
+| Directory     | Purpose                                                              |
+| ------------- | -------------------------------------------------------------------- |
+| `opentofu/`   | Infrastructure provisioning with OpenTofu                            |
+| `ansible/`    | Host configuration and automation                                    |
+| `docker/`     | Containerized services and Compose definitions                       |
+| `kubernetes/` | Kubernetes manifests and cluster configuration                       |
+| `docs/`       | Docs that span contexts: architecture notes, decisions, and runbooks |
 
 The repository is at an early stage, and some of these directories may not exist yet. Create them as needed and keep each kind of work in its directory. Use OpenTofu, not Terraform.
+
+Each of the tool directories is a context, listed in `GLOSSARY-MAP.md`. Docs that belong to one context, such as its ADRs and runbooks, live in that context's `docs/` directory, for example `ansible/docs/adr/`. The root `docs/` holds only docs that span contexts.
 
 ## Working with the owner
 
@@ -27,14 +29,14 @@ The repository is at an early stage, and some of these directories may not exist
 - Prefer small, reviewable changes that can be understood one at a time.
 - Ask before introducing a new tool, or anything else that adds a long-term maintenance burden.
 - Do not paper over something you are unsure about. Say what is unverified, and link to official documentation when a choice depends on it.
-- Record significant architecture decisions as ADRs in `docs/adr/`, following the conventions and template in `docs/adr/README.md`. Add a runbook for any operational procedure that has to be repeated.
+- Record significant architecture decisions as ADRs, following the conventions and template in `docs/adr/README.md`. An ADR internal to one context goes in that context's `docs/adr/`; one that spans contexts or chooses a tool goes in `docs/adr/`. Add a runbook for any operational procedure that has to be repeated, in the `docs/` directory of the context it belongs to.
 
 ## Engineering standards
 
 - **Declarative and idempotent:** a repeated run with no changes must report no changes.
 - **No manual drift:** changes to the homelab are made through this repository, not by hand on a host.
 - **Pinned versions:** pin OpenTofu providers, Ansible collections, container images, and Helm charts to explicit versions. Never use `latest`.
-- **Pinned tools:** the CLIs this repository runs are pinned in `mise.toml`, following [ADR-0003](docs/adr/0003-manage-workstation-tools-with-mise.md). When you create one of the directories above, add the tools it needs in the same change.
+- **Pinned tools:** the CLIs this repository runs are pinned in `mise.toml`, following [ADR-0002](docs/adr/0002-manage-workstation-tools-with-mise.md). When you create one of the directories above, add the tools it needs in the same change.
 - **Least privilege:** avoid running containers as root, and scope credentials and permissions to what is needed.
 - **Readable over clever:** use clear names, and comment only to explain why something is done.
 

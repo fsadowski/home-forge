@@ -2,7 +2,9 @@
 
 ## Contexts
 
-- [Host Configuration](./ansible/GLOSSARY.md): configures the operating system of existing Hosts with Ansible
+- [Host Configuration](./ansible/GLOSSARY.md): configures the operating system of existing Hosts with Ansible. Decisions: [ADRs](./ansible/docs/adr/README.md)
+
+Each context keeps its glossary in its directory and its own docs, such as ADRs, in its `docs/` directory. Docs that span contexts are in the root `docs/`.
 
 Planned contexts, added when their directories are created:
 

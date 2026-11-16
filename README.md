@@ -13,17 +13,17 @@ Built with the help of AI and held to production-ready standards, following indu
 
 ## Structure
 
-| Directory     | Purpose                                         |
-| ------------- | ----------------------------------------------- |
-| `opentofu/`   | Infrastructure provisioning with OpenTofu       |
-| `ansible/`    | Host configuration and automation               |
-| `docker/`     | Containerized services and Compose definitions  |
-| `kubernetes/` | Kubernetes manifests and cluster configuration  |
-| `docs/`       | Architecture notes, decisions, and runbooks     |
+| Directory     | Purpose                                                              |
+| ------------- | -------------------------------------------------------------------- |
+| `opentofu/`   | Infrastructure provisioning with OpenTofu                            |
+| `ansible/`    | Host configuration and automation                                    |
+| `docker/`     | Containerized services and Compose definitions                       |
+| `kubernetes/` | Kubernetes manifests and cluster configuration                       |
+| `docs/`       | Docs that span contexts: architecture notes, decisions, and runbooks |
 
 ## Workstation setup
 
-The tools this repository runs are pinned in [`mise.toml`](mise.toml) and installed with [mise](https://mise.jdx.dev/), as decided in [ADR-0003](docs/adr/0003-manage-workstation-tools-with-mise.md).
+The tools this repository runs are pinned in [`mise.toml`](mise.toml) and installed with [mise](https://mise.jdx.dev/), as decided in [ADR-0002](docs/adr/0002-manage-workstation-tools-with-mise.md).
 
 1. Install mise at the pinned version. The install script verifies the download's checksum before installing:
 
@@ -50,6 +50,6 @@ The tools this repository runs are pinned in [`mise.toml`](mise.toml) and instal
 
 ## Documentation
 
-- [Architecture Decision Records](docs/adr/README.md): significant decisions and the reasons behind them
+- [Architecture Decision Records](docs/adr/README.md): significant decisions and the reasons behind them. Decisions internal to one context are kept in that context's `docs/adr/`, linked from this index.
 - [Glossary map](GLOSSARY-MAP.md): the domain terms used across the repository, grouped by context
 - [AGENTS.md](AGENTS.md): working agreements and engineering standards for contributors, human or AI
