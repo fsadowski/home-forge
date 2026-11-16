@@ -8,17 +8,18 @@ This index lists the ADRs that apply across the repository. Each context lists i
 
 - [Host Configuration](../../ansible/docs/adr/README.md) (`ansible/`)
 
-| ADR                                                  | Title                              | Status   |
-| ---------------------------------------------------- | ---------------------------------- | -------- |
-| [0001](./0001-use-ansible-for-host-configuration.md) | Use Ansible for host configuration | Accepted |
-| [0002](./0002-manage-workstation-tools-with-mise.md) | Manage workstation tools with mise | Accepted |
+| ADR                                                  | Title                                     | Status   |
+| ---------------------------------------------------- | ----------------------------------------- | -------- |
+| [0001](./0001-use-ansible-for-host-configuration.md) | Use Ansible for host configuration        | Accepted |
+| [0002](./0002-manage-workstation-tools-with-mise.md) | Manage workstation tools with mise        | Accepted |
+| [0003](./0003-keep-adrs-with-their-context.md)       | Keep ADRs with the context they belong to | Accepted |
 
 ADRs that were renumbered or moved:
 
-| Former ID | Current ID                                                                         |
-| --------- | ---------------------------------------------------------------------------------- |
-| ADR-0002  | [ADR-ANSIBLE-0001](../../ansible/docs/adr/0001-organise-ansible-by-host-type.md)   |
-| ADR-0003  | [ADR-0002](./0002-manage-workstation-tools-with-mise.md)                           |
+| Former ID | Current ID                                                                       |
+| --------- | -------------------------------------------------------------------------------- |
+| ADR-0002  | [ADR-ANSIBLE-0001](../../ansible/docs/adr/0001-organise-ansible-by-host-type.md) |
+| ADR-0003  | [ADR-0002](./0002-manage-workstation-tools-with-mise.md)                         |
 
 ## When to write an ADR
 
@@ -46,7 +47,7 @@ Leave out any optional section that adds nothing.
 ```markdown
 # ADR-NNNN: <Decision, stated as an action>
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** YYYY-MM-DD
 
 ## Context
