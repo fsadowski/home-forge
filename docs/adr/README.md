@@ -33,21 +33,27 @@ Smaller decisions belong in commit messages or pull request descriptions.
 
 ## Conventions
 
-- **File name:** `NNNN-short-title.md`, numbered in sequence, for example `0002-tool-responsibilities.md`.
+- **Location:** an ADR that only affects the inside of one context lives in that context's `docs/adr/`, such as `ansible/docs/adr/`. An ADR that spans contexts or chooses a tool lives here, in `docs/adr/`. The test is whether someone working outside the context needs to know about the decision. See [ADR-0003](./0003-keep-adrs-with-their-context.md).
+- **File name:** `NNNN-short-title.md`, numbered in sequence within its directory, for example `0002-tool-responsibilities.md`. Each directory with ADRs starts at `0001`.
+- **ID:** `ADR-NNNN` for ADRs here, and `ADR-<DIRECTORY>-NNNN` for ADRs in a context, with the directory name in upper case, such as `ADR-ANSIBLE-0001`. The title of the ADR starts with its ID.
+- **Numbers are never reused.** Moving an ADR leaves a gap in the sequence it left.
 - **One decision per ADR,** so that each can be superseded on its own.
-- **Status:** an ADR is `Proposed` while its pull request is open and `Accepted` when it is merged. An accepted ADR is not edited. To change the decision, write a new ADR, and mark the old one `Superseded by ADR-NNNN`.
+- **Status:** an ADR is `Proposed` while its pull request is open and `Accepted` when it is merged. An accepted ADR is not edited, except when it is moved. To change the decision, write a new ADR, and mark the old one `Superseded by ADR-NNNN`.
 - **Date:** the date the decision was made.
 - **Language:** use the terms defined in the glossaries listed in [`GLOSSARY-MAP.md`](../../GLOSSARY-MAP.md).
-- Add each new ADR to the index above in the same change.
+- **Moving an ADR:** a move may change the ID, the title prefix, and links, and nothing else. Add a `Formerly:` line under the status with the previous ID, and a row to the table of renumbered or moved ADRs above.
+- Add each new ADR to the index of its directory in the same change. A new context gets its own `docs/adr/README.md` index, linked from the list above and from [`GLOSSARY-MAP.md`](../../GLOSSARY-MAP.md).
 
 ## Template
 
 Leave out any optional section that adds nothing.
 
+In a context, start the title with the context's ID, such as `ADR-ANSIBLE-NNNN`.
+
 ```markdown
 # ADR-NNNN: <Decision, stated as an action>
 
-- **Status:** Accepted
+- **Status:** Proposed
 - **Date:** YYYY-MM-DD
 
 ## Context
