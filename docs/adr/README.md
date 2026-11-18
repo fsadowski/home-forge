@@ -8,11 +8,12 @@ This index lists the ADRs that apply across the repository. Each context lists i
 
 - [Host Configuration](../../ansible/docs/adr/README.md) (`ansible/`)
 
-| ADR                                                  | Title                                     | Status   |
-| ---------------------------------------------------- | ----------------------------------------- | -------- |
-| [0001](./0001-use-ansible-for-host-configuration.md) | Use Ansible for host configuration        | Accepted |
-| [0002](./0002-manage-workstation-tools-with-mise.md) | Manage workstation tools with mise        | Accepted |
-| [0003](./0003-keep-adrs-with-their-context.md)       | Keep ADRs with the context they belong to | Accepted |
+| ADR                                                        | Title                                      | Status                                                                                 |
+| ---------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------------- |
+| [0001](./0001-use-ansible-for-host-configuration.md)       | Use Ansible for host configuration         | Accepted                                                                               |
+| [0002](./0002-manage-workstation-tools-with-mise.md)       | Manage workstation tools with mise         | Partially superseded by [ADR-0004](./0004-lock-ansible-python-dependencies-with-uv.md) |
+| [0003](./0003-keep-adrs-with-their-context.md)             | Keep ADRs with the context they belong to  | Accepted                                                                               |
+| [0004](./0004-lock-ansible-python-dependencies-with-uv.md) | Lock Ansible's Python dependencies with uv | Proposed                                                                               |
 
 ADRs that were renumbered or moved:
 
@@ -38,7 +39,7 @@ Smaller decisions belong in commit messages or pull request descriptions.
 - **ID:** `ADR-NNNN` for ADRs here, and `ADR-<DIRECTORY>-NNNN` for ADRs in a context, with the directory name in upper case, such as `ADR-ANSIBLE-0001`. The title of the ADR starts with its ID.
 - **Numbers are never reused.** Moving an ADR leaves a gap in the sequence it left.
 - **One decision per ADR,** so that each can be superseded on its own.
-- **Status:** an ADR is `Proposed` while its pull request is open and `Accepted` when it is merged. An accepted ADR is not edited, except when it is moved. To change the decision, write a new ADR, and mark the old one `Superseded by ADR-NNNN`.
+- **Status:** an ADR is `Proposed` while its pull request is open and `Accepted` when it is merged. An accepted ADR is not edited, except when it is moved. To change the decision, write a new ADR, and mark the old one `Superseded by ADR-NNNN`. When the new ADR replaces only part of the old one, mark the old one `Partially superseded by ADR-NNNN`, and say in the new ADR which part it replaces.
 - **Date:** the date the decision was made.
 - **Language:** use the terms defined in the glossaries listed in [`GLOSSARY-MAP.md`](../../GLOSSARY-MAP.md).
 - **Moving an ADR:** a move may change the ID, the title prefix, and links, and nothing else. Add a `Formerly:` line under the status with the previous ID, and a row to the table of renumbered or moved ADRs above.
