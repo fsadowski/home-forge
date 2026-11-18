@@ -33,7 +33,7 @@ The tools this repository runs are pinned in [`mise.toml`](mise.toml) and instal
 
 2. [Activate mise in your shell](https://mise.jdx.dev/getting-started.html#activate-mise), so the pinned tools and the Ansible virtual environment are used inside the repository.
 
-3. From the repository root, trust the configuration and install the tools. mise also creates the virtual environment in `ansible/.venv`:
+3. From the repository root, trust the configuration and install the tools:
 
    ```sh
    mise trust
@@ -42,11 +42,13 @@ The tools this repository runs are pinned in [`mise.toml`](mise.toml) and instal
 
    `--locked` installs only what `mise.lock` records. It fails if a global mise configuration adds tools that are not in this lockfile, so remove those tools from the global configuration, or leave it out of this run with `MISE_IGNORED_CONFIG_PATHS=~/.config/mise mise install --locked`.
 
-4. Install `ansible-core` and `ansible-lint` into the virtual environment. Run this again whenever `ansible/requirements.txt` changes:
+4. Create the virtual environment in `ansible/.venv` and install the Python packages that `ansible/uv.lock` records, as decided in [ADR-0004](docs/adr/0004-lock-ansible-python-dependencies-with-uv.md). Run this again whenever `ansible/pyproject.toml` or `ansible/uv.lock` changes:
 
    ```sh
-   pip install -r ansible/requirements.txt
+   uv sync --locked --project ansible
    ```
+
+   `--locked` fails if the lockfile is out of date instead of updating it. After changing a version in `pyproject.toml`, run `uv lock --project ansible` and commit both files.
 
 ## Documentation
 
