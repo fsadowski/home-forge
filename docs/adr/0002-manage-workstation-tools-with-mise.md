@@ -1,6 +1,6 @@
 # ADR-0002: Manage workstation tools with mise
 
-- **Status:** Accepted
+- **Status:** Partially superseded by [ADR-0004](./0004-lock-ansible-python-dependencies-with-uv.md)
 - **Formerly:** ADR-0003
 - **Date:** 2026-11-15
 

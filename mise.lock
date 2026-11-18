@@ -11,3 +11,14 @@ specifiers = ["3.15.2"]
 checksum = "sha256:ad23d1b73fac26440b0306ae06911031344c49a90ec19716c8362e7fa40cae43"
 url = "https://github.com/astral-sh/python-build-standalone/releases/download/20261110/cpython-3.15.2+20261110-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz"
 provenance = "github-attestations"
+
+[[tools.uv]]
+version = "0.13.9"
+backend = "aqua:astral-sh/uv"
+specifiers = ["0.13.9"]
+
+[tools.uv."platforms.linux-x64"]
+checksum = "sha256:a7fbaff2b9a271d85c1bdb540941090fd1ce011797b4abeb48e4dcd39c2471d5"
+url = "https://github.com/astral-sh/uv/releases/download/0.13.9/uv-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/astral-sh/uv/releases/assets/758513954"
+provenance = "github-attestations"

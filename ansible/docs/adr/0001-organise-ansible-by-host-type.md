@@ -1,6 +1,6 @@
 # ADR-ANSIBLE-0001: Organise Ansible by Host Type
 
-- **Status:** Accepted
+- **Status:** Partially superseded by [ADR-0004](../../../docs/adr/0004-lock-ansible-python-dependencies-with-uv.md)
 - **Formerly:** ADR-0002
 - **Date:** 2026-11-15
 

@@ -4,6 +4,6 @@ Architecture Decision Records that apply only to the Host Configuration context 
 
 ## Index
 
-| ADR                                                     | Title                         | Status   |
-| ------------------------------------------------------- | ----------------------------- | -------- |
-| [ANSIBLE-0001](./0001-organise-ansible-by-host-type.md) | Organise Ansible by Host Type | Accepted |
+| ADR                                                     | Title                         | Status                                                                                                 |
+| ------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------ |
+| [ANSIBLE-0001](./0001-organise-ansible-by-host-type.md) | Organise Ansible by Host Type | Partially superseded by [ADR-0004](../../../docs/adr/0004-lock-ansible-python-dependencies-with-uv.md) |
