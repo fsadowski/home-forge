@@ -8,13 +8,14 @@ This index lists the ADRs that apply across the repository. Each context lists i
 
 - [Host Configuration](../../ansible/docs/adr/README.md) (`ansible/`)
 
-| ADR                                                        | Title                                      | Status                                                                                 |
-| ---------------------------------------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------------- |
-| [0001](./0001-use-ansible-for-host-configuration.md)       | Use Ansible for host configuration         | Accepted                                                                               |
-| [0002](./0002-manage-workstation-tools-with-mise.md)       | Manage workstation tools with mise         | Partially superseded by [ADR-0004](./0004-lock-ansible-python-dependencies-with-uv.md) |
-| [0003](./0003-keep-adrs-with-their-context.md)             | Keep ADRs with the context they belong to  | Accepted                                                                               |
-| [0004](./0004-lock-ansible-python-dependencies-with-uv.md) | Lock Ansible's Python dependencies with uv | Accepted                                                                               |
-| [0005](./0005-run-ubuntu-lts-on-every-host.md)             | Run Ubuntu 26.04 LTS on every Host         | Proposed                                                                               |
+| ADR                                                                 | Title                                               | Status                                                                                 |
+| ------------------------------------------------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [0001](./0001-use-ansible-for-host-configuration.md)                | Use Ansible for host configuration                  | Accepted                                                                               |
+| [0002](./0002-manage-workstation-tools-with-mise.md)                | Manage workstation tools with mise                  | Partially superseded by [ADR-0004](./0004-lock-ansible-python-dependencies-with-uv.md) |
+| [0003](./0003-keep-adrs-with-their-context.md)                      | Keep ADRs with the context they belong to           | Accepted                                                                               |
+| [0004](./0004-lock-ansible-python-dependencies-with-uv.md)          | Lock Ansible's Python dependencies with uv          | Accepted                                                                               |
+| [0005](./0005-run-ubuntu-lts-on-every-host.md)                      | Run Ubuntu 26.04 LTS on every Host                  | Proposed                                                                               |
+| [0006](./0006-name-hosts-by-placement-environment-and-host-type.md) | Name Hosts by placement, Environment, and Host Type | Accepted                                                                               |
 
 ADRs that were renumbered or moved:
 
