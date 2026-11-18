@@ -29,6 +29,10 @@ _Avoid_: Proxmox node, PVE host
 The k3s cluster that runs the Cluster Workloads. Its members are the Cluster Nodes.
 _Avoid_: k8s cluster, Kubernetes cluster
 
+**Environment**:
+The stage a workload belongs to: production or test. It is not a hardware boundary: VM Hosts of both Environments run on the same Hypervisors.
+_Avoid_: stage, tier
+
 **Workstation**:
 The machine the owner runs this repository's tools from. It is not a Host: Ansible does not configure it.
 _Avoid_: laptop, dev machine, control node
