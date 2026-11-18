@@ -31,8 +31,12 @@ A Host that is a member of the Cluster.
 _Avoid_: node, k8s VM, Proxmox node
 
 **Admin User**:
-The one account on a Host that both the owner and Ansible log in as. Bootstrap creates it, and Baseline owns it from then on.
-_Avoid_: Ansible user, automation user, deploy user
+The owner's personal account on a Host, used to log in by hand. Ansible does not log in as it. Bootstrap creates it, and Baseline owns it from then on.
+_Avoid_: personal user, owner account
+
+**Automation User**:
+The service account on a Host that Ansible logs in as, and that no person uses. Bootstrap creates it, and Baseline owns it from then on.
+_Avoid_: Ansible user, deploy user, service user
 
 ### Services
 
@@ -43,11 +47,11 @@ _Avoid_: core services, infra services
 ### Lifecycle
 
 **Bootstrap**:
-The first-boot setup that makes a Host reachable by Ansible: the Admin User, SSH access, and Python.
+The first-boot setup that makes a Host reachable by Ansible: the Automation User with SSH key access and passwordless sudo, the Admin User, and Python.
 _Avoid_: provisioning, initial setup
 
 **Baseline**:
-The configuration every Host gets apart from Hardening, such as time synchronization, base packages, and the Admin User.
+The configuration every Host gets apart from Hardening, such as time synchronization, base packages, the Admin User, and the Automation User.
 _Avoid_: common, base config
 
 **Hardening**:

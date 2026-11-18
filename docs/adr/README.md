@@ -14,6 +14,7 @@ This index lists the ADRs that apply across the repository. Each context lists i
 | [0002](./0002-manage-workstation-tools-with-mise.md)       | Manage workstation tools with mise         | Partially superseded by [ADR-0004](./0004-lock-ansible-python-dependencies-with-uv.md) |
 | [0003](./0003-keep-adrs-with-their-context.md)             | Keep ADRs with the context they belong to  | Accepted                                                                               |
 | [0004](./0004-lock-ansible-python-dependencies-with-uv.md) | Lock Ansible's Python dependencies with uv | Accepted                                                                               |
+| [0005](./0005-run-ubuntu-lts-on-every-host.md)             | Run Ubuntu 26.04 LTS on every Host         | Proposed                                                                               |
 
 ADRs that were renumbered or moved:
 
