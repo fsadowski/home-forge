@@ -30,6 +30,14 @@ _Avoid_: Docker server
 A Host that is a member of the Cluster.
 _Avoid_: node, k8s VM, Proxmox node
 
+**Control Plane Node**:
+A Cluster Node that runs the Cluster's control plane and datastore.
+_Avoid_: server, master
+
+**Worker Node**:
+A Cluster Node that runs Cluster Workloads but not the control plane.
+_Avoid_: agent, worker, minion
+
 **Admin User**:
 The owner's personal account on a Host, used to log in by hand. Ansible does not log in as it. Bootstrap creates it, and Baseline owns it from then on.
 _Avoid_: personal user, owner account

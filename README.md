@@ -53,6 +53,7 @@ The tools this repository runs are pinned in [`mise.toml`](mise.toml) and instal
 ## Documentation
 
 - [Architecture Decision Records](docs/adr/README.md): significant decisions and the reasons behind them. Decisions internal to one context are kept in that context's `docs/adr/`, linked from this index.
+- [Host naming convention](docs/host-naming.md): how Hosts, Hypervisors, and the Workstation are named
 - [Open questions](docs/open-questions.md): decisions that have not been made yet
 - [Glossary map](GLOSSARY-MAP.md): the domain terms used across the repository, grouped by context
 - [AGENTS.md](AGENTS.md): working agreements and engineering standards for contributors, human or AI
