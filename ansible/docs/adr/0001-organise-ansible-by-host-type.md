@@ -1,6 +1,7 @@
 # ADR-ANSIBLE-0001: Organise Ansible by Host Type
 
 - **Status:** Partially superseded by [ADR-0004](../../../docs/adr/0004-lock-ansible-python-dependencies-with-uv.md)
+- **Why:** uv's lockfile now pins transitive Python dependencies with hashes, which `requirements.txt` could not. The `requirements.txt` entry in the layout, its bullet under "Pinning", the rejected "`uv` with a lockfile" alternative, and the cost about unlocked transitive dependencies no longer apply.
 - **Formerly:** ADR-0002
 - **Date:** 2026-11-15
 

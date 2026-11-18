@@ -1,6 +1,6 @@
 # ADR-0004: Lock Ansible's Python dependencies with uv
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-18
 
 ## Context
