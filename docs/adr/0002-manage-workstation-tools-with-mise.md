@@ -1,6 +1,7 @@
 # ADR-0002: Manage workstation tools with mise
 
 - **Status:** Partially superseded by [ADR-0004](./0004-lock-ansible-python-dependencies-with-uv.md)
+- **Why:** Pinning only the direct Python dependencies left transitive ones unlocked and unchecked, so uv now creates `ansible/.venv` from a hashed `uv.lock`. In "Python and Ansible", only the rule that mise pins Python and activates the virtual environment still applies; the `requirements.txt` cost and the out-of-scope item on locking transitive dependencies no longer do.
 - **Formerly:** ADR-0003
 - **Date:** 2026-11-15
 

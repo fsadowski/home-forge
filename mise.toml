@@ -1,5 +1,5 @@
 # Workstation tools for this repository, as decided in ADR-0002.
-# Versions are exact; add an area's tools when its directory is created.
+# Versions are exact; add a context's tools when its directory is created.
 min_version = "2026.11.5"
 
 [tools]

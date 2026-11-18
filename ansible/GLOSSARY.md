@@ -1,6 +1,6 @@
 # Host Configuration
 
-Configures the operating system of hosts that already exist, so that they reach and keep the state defined in this repository.
+Configures the operating system of Hosts that already exist, so that they reach and keep the state defined in this repository.
 
 ## Language
 
@@ -27,8 +27,12 @@ A Host that runs the Base Services as containers.
 _Avoid_: Docker server
 
 **Cluster Node**:
-A Host that is a member of the k3s cluster.
+A Host that is a member of the Cluster.
 _Avoid_: node, k8s VM, Proxmox node
+
+**Admin User**:
+The one account on a Host that both the owner and Ansible log in as. Bootstrap creates it, and Baseline owns it from then on.
+_Avoid_: Ansible user, automation user, deploy user
 
 ### Services
 
@@ -39,13 +43,13 @@ _Avoid_: core services, infra services
 ### Lifecycle
 
 **Bootstrap**:
-The first-boot setup that makes a Host reachable by Ansible: the user Ansible connects as, SSH access, and Python. From then on, Baseline owns that user.
+The first-boot setup that makes a Host reachable by Ansible: the Admin User, SSH access, and Python.
 _Avoid_: provisioning, initial setup
 
 **Baseline**:
-The configuration every Host gets that is not Hardening, such as time synchronisation, base packages, and the admin user.
+The configuration every Host gets apart from Hardening, such as time synchronization, base packages, and the Admin User.
 _Avoid_: common, base config
 
 **Hardening**:
-The baseline security configuration applied to every Host after it is reachable.
+The security configuration every Host gets once it is reachable, such as SSH and firewall settings.
 _Avoid_: securing, lockdown

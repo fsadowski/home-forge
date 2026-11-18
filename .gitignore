@@ -92,9 +92,10 @@ vault-password.txt
 .ansible/
 .ansible_cache/
 fact_cache/
-# Roles and collections installed from requirements.yml
-galaxy_roles/
-galaxy_collections/
+# Collections installed from requirements.yml (ADR-ANSIBLE-0001)
+ansible/collections/
+# The real inventory holds homelab addresses; commit hosts.example.yml instead
+ansible/inventory/hosts.yml
 .molecule/
 
 # ==============================================================================
