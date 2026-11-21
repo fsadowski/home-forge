@@ -1,6 +1,6 @@
 # ADR-0005: Run Ubuntu 26.04 LTS on every Host
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-18
 
 ## Context
