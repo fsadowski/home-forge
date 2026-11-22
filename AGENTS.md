@@ -22,7 +22,7 @@ The directories are listed in the [Structure section of `README.md`](README.md#s
 - Ask before introducing a new tool, or anything else that adds a long-term maintenance burden.
 - Do not paper over something you are unsure about. Say what is unverified, and link to official documentation when a choice depends on it.
 - Code comes first. An ADR, a glossary term, or a convention is added in the same pull request as the code that uses it, never ahead of it. Exploratory thinking belongs in the local issue tracker, not in committed docs.
-- Record significant architecture decisions as ADRs. The ADR conventions and template are added with the first ADR. Add a runbook for any operational procedure that has to be repeated.
+- Record significant architecture decisions as ADRs, following [`docs/adr/README.md`](docs/adr/README.md). An ADR that affects one context goes in that context's `docs/adr/`, and one that affects more than one goes in `docs/adr/`. Update the index in `docs/adr/README.md` in the same change. Add a runbook for any operational procedure that has to be repeated.
 
 ## Engineering standards
 
