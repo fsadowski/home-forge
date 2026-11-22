@@ -4,6 +4,8 @@ Architecture Decision Records that apply only to the Host Configuration context 
 
 ## Index
 
-| ADR                                                     | Title                         | Status                                                                                                 |
-| ------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------ |
-| [ANSIBLE-0001](./0001-organise-ansible-by-host-type.md) | Organise Ansible by Host Type | Partially superseded by [ADR-0004](../../../docs/adr/0004-lock-ansible-python-dependencies-with-uv.md) |
+| ADR                                                          | Title                              | Status                                                                                                                                                                                                                                 |
+| ------------------------------------------------------------ | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ANSIBLE-0001](./0001-organise-ansible-by-host-type.md)      | Organise Ansible by Host Type      | Partially superseded by [ADR-0004](../../../docs/adr/0004-lock-ansible-python-dependencies-with-uv.md), [ANSIBLE-0002](./0002-keep-one-inventory-per-environment.md), and [ANSIBLE-0003](./0003-check-every-host-before-any-change.md) |
+| [ANSIBLE-0002](./0002-keep-one-inventory-per-environment.md) | Keep one inventory per Environment | Proposed                                                                                                                                                                                                                               |
+| [ANSIBLE-0003](./0003-check-every-host-before-any-change.md) | Check every Host before any change | Proposed                                                                                                                                                                                                                               |
