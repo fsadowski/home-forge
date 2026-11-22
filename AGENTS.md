@@ -65,6 +65,31 @@ These commands change live systems, so run them only when the owner explicitly a
 
 Read-only inspection, such as `tofu plan` and `ansible-playbook --check`, is the preferred way to preview a change. Show the owner the output before anything is applied.
 
+## Issue tracker
+
+Specs and tasks are tracked locally, not on GitHub. Each one is a Markdown file in `issues/` at the repository root, named `<number>-<short-description>.md` with a zero-padded number, for example `0001-ansible-skeleton.md`. The directory is gitignored: specs are working notes, and the lasting record is the ADRs, runbooks, and READMEs that the work produces.
+
+Each file starts with YAML frontmatter:
+
+```yaml
+---
+title: Ansible skeleton
+status: ready-for-agent
+created: 2026-11-22
+---
+```
+
+`status` is the triage label, one of:
+
+| Status            | Meaning                                                  |
+| ----------------- | -------------------------------------------------------- |
+| `needs-triage`    | Not reviewed yet                                         |
+| `needs-info`      | Blocked on a question for the owner                      |
+| `ready-for-agent` | Fully specified; an agent can implement it unaided       |
+| `ready-for-human` | Specified, but the owner implements it                   |
+| `wontfix`         | Decided against                                          |
+| `done`            | Implemented and merged                                   |
+
 ## Git workflow
 
 - Never commit directly to `main`. Work on a short-lived branch named `<type>/<short-description>`, for example `docs/agents-md`.

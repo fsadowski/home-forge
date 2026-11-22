@@ -150,6 +150,9 @@ sbom*.json
 # .github/copilot-instructions.md, .clinerules, .cursorrules, ...
 # Do not put tokens in .mcp.json; reference environment variables instead.
 
+# Local issue tracker: specs are working notes, see "Issue tracker" in AGENTS.md
+issues/
+
 # Claude Code
 CLAUDE.local.md
 .claude/settings.local.json
