@@ -1,6 +1,6 @@
 # ADR-ANSIBLE-0002: Keep one inventory per Environment
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-22
 
 ## Context

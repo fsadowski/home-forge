@@ -1,6 +1,6 @@
 # ADR-ANSIBLE-0003: Check every Host before any change
 
-- **Status:** Proposed
+- **Status:** Accepted
 - **Date:** 2026-11-22
 
 ## Context
