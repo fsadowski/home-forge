@@ -14,7 +14,6 @@ Decisions that have not been made yet. Remove a question in the same change as t
 ## Host Configuration
 
 - **k3s:** whether k3s is installed with a community role. From ADR-ANSIBLE-0001.
-- **Test Environment:** how the inventory separates test Hosts from production. ADR-ANSIBLE-0001 assumes one environment and one inventory, but [ADR-0006](adr/0006-name-hosts-by-placement-environment-and-host-type.md) plans a test Environment.
 
 ## Planned contexts
 

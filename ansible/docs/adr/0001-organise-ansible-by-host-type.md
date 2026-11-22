@@ -1,7 +1,9 @@
 # ADR-ANSIBLE-0001: Organise Ansible by Host Type
 
-- **Status:** Partially superseded by [ADR-0004](../../../docs/adr/0004-lock-ansible-python-dependencies-with-uv.md)
-- **Why:** uv's lockfile now pins transitive Python dependencies with hashes, which `requirements.txt` could not. The `requirements.txt` entry in the layout, its bullet under "Pinning", the rejected "`uv` with a lockfile" alternative, and the cost about unlocked transitive dependencies no longer apply.
+- **Status:** Partially superseded by [ADR-0004](../../../docs/adr/0004-lock-ansible-python-dependencies-with-uv.md), [ADR-ANSIBLE-0002](./0002-keep-one-inventory-per-environment.md), and [ADR-ANSIBLE-0003](./0003-check-every-host-before-any-change.md)
+- **Why (ADR-0004):** uv's lockfile now pins transitive Python dependencies with hashes, which `requirements.txt` could not. The `requirements.txt` entry in the layout, its bullet under "Pinning", the rejected "`uv` with a lockfile" alternative, and the cost about unlocked transitive dependencies no longer apply.
+- **Why (ADR-ANSIBLE-0002):** a test Environment is now planned, so each Environment gets its own inventory. The `inventory/` part of the layout, the inventory bullets on a single Environment, on `ansible.cfg`, and on where variables live, and the rejected "Separate staging and production inventories" alternative no longer apply.
+- **Why (ADR-ANSIBLE-0003):** the checks that run before any role now cover names, the Environment, the connection user, and the operating system, not only the Host Type. The `check_host_type.yml` entry in the layout, the "One Host Type per Host" bullet on what it asserts, and the Playbooks bullet that imports it no longer apply.
 - **Formerly:** ADR-0002
 - **Date:** 2026-11-15
 
