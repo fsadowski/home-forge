@@ -1,0 +1,4 @@
+---
+# A fixed path keeps the interpreter stable across Python upgrades on the Host.
+# On the Debian family, /usr/bin/python3 always points to the system Python.
+ansible_python_interpreter: /usr/bin/python3

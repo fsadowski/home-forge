@@ -94,8 +94,11 @@ vault-password.txt
 fact_cache/
 # Collections installed from requirements.yml
 ansible/collections/
-# The real inventory holds homelab addresses; commit hosts.example.yml instead
-ansible/inventory/hosts.yml
+# The real inventory holds homelab addresses; commit a *.example.yaml copy instead
+ansible/inventory/*.yaml
+ansible/inventory/*.yml
+!ansible/inventory/*.example.yaml
+!ansible/inventory/*.example.yml
 .molecule/
 
 # ==============================================================================
