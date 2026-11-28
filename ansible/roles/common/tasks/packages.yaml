@@ -1,0 +1,6 @@
+---
+# An OS family without its own list gets only the common packages.
+- name: Install required packages
+  ansible.builtin.package:
+    name: "{{ required_packages['common'] + (required_packages[ansible_facts['os_family']] | default([])) }}"
+    state: present

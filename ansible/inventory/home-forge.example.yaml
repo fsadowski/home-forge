@@ -1,0 +1,15 @@
+---
+# Example inventory. Copy it to home-forge.yaml and fill in the real values.
+# The copy is gitignored because it holds homelab addresses.
+# Hosts are grouped twice: by Host Type and by Environment.
+all:
+  children:
+    docker_hosts:
+      hosts:
+        srv-prd-dkr-01:
+          ansible_host: 192.0.2.10 # Placeholder from the RFC 5737 documentation range
+          ansible_port: 22
+          ansible_user: <ssh-user>
+    prd:
+      hosts:
+        srv-prd-dkr-01:

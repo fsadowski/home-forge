@@ -1,0 +1,7 @@
+---
+required_packages:
+  common:
+    - git
+  Debian:
+    - cron
+    - network-manager
