@@ -13,7 +13,7 @@ Everything is held to production-ready standards, even though it runs at home.
 
 The directories are listed in the [Structure section of `README.md`](README.md#structure). The repository is at an early stage, and some of them may not exist yet. Create them as needed and keep each kind of work in its directory. Use OpenTofu, not Terraform.
 
-`opentofu/`, `ansible/`, `docker/`, and `kubernetes/` are each a planned context, listed in `GLOSSARY-MAP.md`.
+`opentofu/`, `ansible/`, `docker/`, and `kubernetes/` are each a planned context, listed in `GLOSSARY-MAP.md`. Before changing files in a context, read its `AGENTS.md` if it has one.
 
 ## Working with the owner
 

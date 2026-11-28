@@ -26,6 +26,7 @@ The planned layout. Each directory is created with the first code that belongs i
 ## Documentation
 
 - [Architecture Decision Records](docs/adr/README.md): how decisions are recorded, and an index of every ADR
+- [Ansible](ansible/README.md): how Hosts are configured, and how to run the playbooks
 - [Host naming convention](docs/host-naming.md): how Hosts, Hypervisors, and the Workstation are named
 - [Glossary map](GLOSSARY-MAP.md): the domain terms used across the repository
 - [AGENTS.md](AGENTS.md): working agreements and engineering standards for contributors, human or AI
